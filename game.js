@@ -12,7 +12,7 @@ function computerPlay() { //picks rock paper or scissors
 let ties = 0
 let wins = 0
 let losses = 0
-
+let gametotal = 0
 
 //function for player selection 
 function playerSelection(input) {
@@ -23,20 +23,20 @@ function playerSelection(input) {
 
 //function playes one round of rock paper scissors 
 function playRound(playerChoice, computerChoice) {
-
-    
+    //allows playRound function to operate five times 
+    if (gametotal < 5) {
         let correctChoice = ['rock', 'scissors', 'paper']
 
 
         // if player and computer have the same item 
-
 
         if (playerChoice == computerChoice) {
             let result = (playerChoice + " ties with " + computerChoice + ".");
             // updates results sentence with result by using id and innertext to update
             document.getElementById('results').innerText = result
             ties = ties + 1
-            document.getElementById('ties').innerText = ties + 1
+            document.getElementById('ties').innerText = ties + 1 //updates ties amount 
+            return // breaks function once this result happens
 
         }
 
@@ -47,7 +47,9 @@ function playRound(playerChoice, computerChoice) {
             let result = ("You lose!" + " " + computerChoice + " beats " + playerChoice);
             document.getElementById('results').innerText = result
             losses = losses + 1
-            document.getElementById('losses').innerText = losses
+            document.getElementById('losses').innerText = losses //updates losses amount 
+            gametotal = gametotal + 1
+            return // breaks function once this result happens
         }
 
         // if you didn't enter the wrong input, tie, or lose, then you won!
@@ -56,28 +58,18 @@ function playRound(playerChoice, computerChoice) {
             let result = ("You win! " + playerChoice + " beats " + computerChoice);
             document.getElementById('results').innerText = result
             wins = wins + 1
-            document.getElementById('wins').innerText = wins
+            document.getElementById('wins').innerText = wins //updates wins number
+            gametotal = gametotal + 1 
+            return  // breaks function once this result happens 
         }
-
-    
-}
-//plays rock paper scissors five times
-
-
-function game(){
-    for (let i = 0; i<5; i++){
-        playRound()
+    }
+    // if you have more wins than losses, you won! 
+    else if (wins > losses) {
+        document.getElementById('finalresult').innerText = 'Congratulations! You beat Hal 9000!';
+    }
+    // else, you lost! 
+    else {
+        document.getElementById('finalresult').innerText = 'You lost to a computer. Better luck next time!';
     }
 }
-/*
-function game(){
-    for (let i = 0; i<5; i++){
-        let playerChoice = playerSelection();
-        let computerChoice = computerPlay();
-        console.log(playRound(playerChoice,computerChoice));
-    }
-}
-*/
 
-
- //calls rock paper scissors game which is played five times total including bad inputs 
