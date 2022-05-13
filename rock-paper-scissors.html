@@ -7,27 +7,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="game.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <button onclick="playRound('rock',computerPlay())">Rock</button>
-    <button onclick="playRound('scissors',computerPlay())">Scissors</button>
-    <button onclick="playRound('paper',computerPlay())">Paper</button>
-    <button onclick = "location.reload()">Reset</button>
-    <div>Your Wins:</div>
-        <p id = 'wins'></p>
-    <div> PC Wins: </div>
-       <p id='losses'><p>
-    <div> Ties:
-        <p id = 'ties'></p>
+    <div class='content'>
+        <div class=winTiesLossContainer>
+            <div class='winContainer'>
+                <div>Your Wins:</div>
+                <p id='wins'>0</p>
+            </div>
+            <div class='tieContainer'>
+                <div> Ties: </div>
+                <p id='ties'>0</p>
+            </div>
+            <div class='lossContainer'>
+                <div> PC Wins:</div>
+                <p id='losses'>0
+                <p>
+            </div>
+        </div>
+
+        <div class=choices>
+            <div class=rockContainer>
+                <img src="./assets/rock.png" alt="Rock image" width="200" height="200">
+                <button onclick="playRound('rock',computerPlay())" class='rock'>Rock</button>
+            </div>
+            <div class='scissorsContainer'>
+                <img src="./assets/scissors.png" alt="scissors image" width="200" height="200">
+                <button onclick="playRound('scissors',computerPlay())">Scissors</button>
+            </div>
+            <div class='paperContainer'>
+                <img src="./assets/paper.png" alt="paper image" width="200">
+                <button onclick="playRound('paper',computerPlay())">Paper</button>
+            </div>
+        </div>
+        <button onclick="location.reload()">Reset</button>
+
+        <!--<div id='container'>Results:
+            <p id='results'></p>
+        </div> -->
+        <div> Final Result:
+            <p id='finalresult'></p>
+        </div>
     </div>
-    <div id='container'>Results:
-        <p id='results'></p>
-    </div>
-    <div> Final Result:
-        <p id = 'finalresult'></p>
-    </div>
-    
 </body>
 
 </html>

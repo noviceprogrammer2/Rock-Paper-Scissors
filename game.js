@@ -33,7 +33,7 @@ function playRound(playerChoice, computerChoice) {
         if (playerChoice == computerChoice) {
             let result = (playerChoice + " ties with " + computerChoice + ".");
             // updates results sentence with result by using id and innertext to update
-            document.getElementById('results').innerText = result
+            //document.getElementById('results').innerText = result
             ties = ties + 1
             document.getElementById('ties').innerText = ties + 1 //updates ties amount 
             return // breaks function once this result happens
@@ -45,7 +45,7 @@ function playRound(playerChoice, computerChoice) {
 
         else if ((playerChoice == 'rock' && computerChoice == 'paper') || (playerChoice == 'paper' && computerChoice == 'scissors') || (playerChoice == 'scissors' && computerChoice == 'rock')) {
             let result = ("You lose!" + " " + computerChoice + " beats " + playerChoice);
-            document.getElementById('results').innerText = result
+            //document.getElementById('results').innerText = result
             losses = losses + 1
             document.getElementById('losses').innerText = losses //updates losses amount 
             gametotal = gametotal + 1
@@ -56,7 +56,7 @@ function playRound(playerChoice, computerChoice) {
 
         else { //((playerChoice == 'rock' && computerChoice == 'scissors') || (playerChoice == 'paper' && computerChoice == 'rock') || (playerChoice =='scissors' & computerChoice == 'rock')){
             let result = ("You win! " + playerChoice + " beats " + computerChoice);
-            document.getElementById('results').innerText = result
+            //document.getElementById('results').innerText = result
             wins = wins + 1
             document.getElementById('wins').innerText = wins //updates wins number
             gametotal = gametotal + 1 
