@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="game.js" ></script>
+    <script src="game.js" defer></script>
 </head>
+
 <body>
+    <button onclick="playRound('rock',computerPlay())">Rock</button>
+    <button onclick="playRound('scissors',computerPlay())">Scissors</button>
+    <button onclick="playRound('paper',computerPlay())">Paper</button>
+    <div>Your Wins:</div>
+        <p id = 'wins'></p>
+    <div> PC Wins: </div>
+       <p id='losses'><p>
+    <div> Ties:
+        <p id = 'ties'></p>
+    </div>
+    <div id='container'>Results:
+        <p id='results'></p>
+    </div>
     
 </body>
+
 </html>
