@@ -1,13 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="game.js" ></script>
+    <script src="game.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+
+    <div class='content'>
+
+        <div class='computerContainer'>
+            <div class='earthContainer'>
+                <img src='./assets/earth.png' class='earth' alt='Earth'>
+                <h1>Earth Wins</h1>
+                <p id='wins' style='font-size: 100px;'>0</p>
+            </div>
+            <h1>Can you save mankind by defeating Skynet in 5 rounds of Rock, Paper, Scissors?</h1>
+            <div class='pcContainer'>
+                <img src='./assets/hal9000.png' class='hal9000' alt="Hal 9000">
+                <h1>Skynet Wins</h1>
+                <p id='losses' style='font-size:100px; font-style: bold;'>0</p>
+            </div>
+        </div>
+        <div class='tieContainer'>
+            <h1> Ties </h1>
+            <p id='ties' style="font-size:50px">0</p>
+        </div>
+
+        <div class=choices>
+            <div class=rockContainer>
+                <button onclick="playRound('rock',computerPlay())" class='rock'></button>
+            </div>
+            <div class='scissorsContainer'>
+                <button onclick="playRound('scissors',computerPlay())" class='scissors'></button>
+            </div>
+            <div class='paperContainer'>
+                <button onclick="playRound('paper',computerPlay())" class='paper'></button>
+            </div>
+        </div>
+        <div class='resetContainer'>
+            <button onclick="location.reload()" class='reset'>Reset</button>
+        </div>
+        <!--<div id='container'>Results:
+            <p id='results'></p>
+        </div> -->
+        <div class='resultContainer'>
+            <p id='finalresult' style='font-size: 40px;'></p>
+        </div>
+    </div>
 </body>
+
 </html>

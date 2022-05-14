@@ -1,0 +1,127 @@
+/* sizes html to always cover full background */
+html {
+    background: black;
+    background-size: cover;
+    color: white;
+}
+
+p,
+h1 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.content {
+    margin: 60px 70px;
+
+
+}
+
+.earth,
+.hal9000 {
+    height: 400px;
+    background-color: #383838;
+    border-radius: 50px;
+    padding: 20px;
+}
+
+.computerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.earthContainer,
+.pcContainer,
+.tieContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+button {
+    width: 200px;
+    height: 200px;
+    color: white;
+    background-color: transparent;
+    background-size: cover;
+    padding: 10px;
+
+}
+
+.rock,
+.scissors,
+.paper,
+.reset {
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    border: 10px;
+    border-style: solid;
+    border-color: white;
+    background-origin: content-box;
+    /*images respect background padding */
+}
+
+.reset {
+    width: 100pxx;
+    height: 80px;
+    background-color: red;
+    font-size: larger;
+    font-weight: bold;
+    justify-content: center;
+}
+
+/* adds transformation for button clicks */
+.rock:active,
+.scissors:active,
+.paper:active,
+.reset:active {
+    background-color: red;
+    box-shadow: 0 5px #666;
+    transform: translateY(10px);
+}
+
+.rock {
+    background-image: url('./assets/rock.png');
+
+}
+
+.scissors {
+    background-image: url('./assets/scissors.png');
+}
+
+.paper {
+    background-image: url('./assets/paper.png');
+}
+
+.winContainer,
+.tieContainer,
+.lossContainer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.choices {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin: 20px;
+    gap: 80px;
+}
+
+.resetContainer, .resultContainer {
+    display:flex; 
+    justify-content: center;
+    margin: 20px;
+}
+
+.rockContainer,
+.scissorsContainer,
+.paperContainer {
+    display: flex;
+    flex-direction: column;
+}
